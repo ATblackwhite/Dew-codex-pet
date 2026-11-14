@@ -413,7 +413,7 @@ public partial class MainWindow : Window
     {
         if (!PetProgress.TryClaimDailyRice(_settings, DateOnly.FromDateTime(DateTime.Now)))
         {
-            MessageBox.Show("今天已经领取过白饭啦，明天再来吧。", "深深桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("今天已经领取过白饭啦，明天再来吧。", "Dew桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
             return;
         }
 
@@ -426,7 +426,7 @@ public partial class MainWindow : Window
     {
         if (!PetProgress.TryFeed(_settings))
         {
-            MessageBox.Show("白饭不够了，可以领取今天的白饭。", "深深桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("白饭不够了，可以领取今天的白饭。", "Dew桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
             return;
         }
 
@@ -439,7 +439,7 @@ public partial class MainWindow : Window
     {
         var level = PetProgress.GetBondLevel(_settings);
         ProgressMenuItem.Header = $"白饭 ×{_settings.Rice} · 羁绊 Lv.{level}";
-        _trayIcon?.SetTooltip($"深深桌宠 · 白饭 {_settings.Rice} · 羁绊 Lv.{level}");
+        _trayIcon?.SetTooltip($"Dew桌宠 · 白饭 {_settings.Rice} · 羁绊 Lv.{level}");
     }
 
     private void OnWaveClick(object sender, RoutedEventArgs e) => _player.Play("waving");
@@ -559,7 +559,7 @@ public partial class MainWindow : Window
     {
         var dialog = new OpenFileDialog
         {
-            Title = "导入深深 Pet Pack",
+            Title = "导入Dew Pet Pack",
             Filter = "Shenshen Pet Pack (*.zip;*.shenshenpet)|*.zip;*.shenshenpet|ZIP 文件 (*.zip)|*.zip|所有文件 (*.*)|*.*",
             CheckFileExists = true,
             Multiselect = false,
@@ -613,7 +613,7 @@ public partial class MainWindow : Window
     private void UpdateActivePackUi()
     {
         ActivePackMenuItem.Header = _settings.ActivePetPackId is null
-            ? "当前角色：深深（内置）"
+            ? "当前角色：Dew（内置）"
             : $"当前角色：{_manifest.DisplayName}（{_settings.ActivePetPackId}）";
     }
 
@@ -625,7 +625,7 @@ public partial class MainWindow : Window
         {
             var target = CodexPetInstaller.Install(Path.Combine(AppContext.BaseDirectory, "codex"));
             MessageBox.Show(
-                $"已安装到：\n{target}\n\n请在设置 > Pets 中刷新并启用“深深”，再输入 /pet 唤醒。",
+                $"已安装到：\n{target}\n\n请在设置 > Pets 中刷新并启用“Dew”，再输入 /pet 唤醒。",
                 "Codex 桌宠安装完成",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
@@ -665,7 +665,7 @@ public partial class MainWindow : Window
             UpdateBridgeMenuState();
             RefreshCodexStateWatcher();
             var backupHint = backup is null ? string.Empty : $"\n卸载前备份：{backup}";
-            MessageBox.Show($"已移除深深的 Codex Hook；其他 Hook 保持不变。{backupHint}", "Codex 状态桥接", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"已移除Dew的 Codex Hook；其他 Hook 保持不变。{backupHint}", "Codex 状态桥接", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         catch (Exception exception)
         {

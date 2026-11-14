@@ -1,25 +1,25 @@
-# 深深桌宠（Shenshen Pet）
+# Dew桌宠（Dew）
 
 [![Release](https://img.shields.io/github/v/release/schrieeeffer/shenshen-codex-pet)](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest)
 [![CI](https://github.com/schrieeeffer/shenshen-codex-pet/actions/workflows/ci.yml/badge.svg)](https://github.com/schrieeeffer/shenshen-codex-pet/actions/workflows/ci.yml)
 [![Windows](https://img.shields.io/badge/Windows-10%2B-0078D4)](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest)
 [![Visuals: CC BY-NC-SA 4.0](https://img.shields.io/badge/visuals-CC%20BY--NC--SA%204.0-lightgrey)](ASSET_LICENSE.md)
 
-一个非官方、非商用的蓝发鲸鱼娘桌宠：既能双击运行在 Windows 桌面，也能作为 ChatGPT/Codex 的自定义 Pet，为兼容的 Dot/Pets 桌面界面换上深深的外观。
+一个非官方、非商用的蓝发鲸鱼娘桌宠：既能双击运行在 Windows 桌面，也能作为 ChatGPT/Codex 的自定义 Pet，为兼容的 Dot/Pets 桌面界面换上Dew的外观。
 
 > 本项目与 DeepSeek、OpenAI、ChatGPT 均无隶属、合作或背书关系。维护者已取得原作者的非商业许可；代码和视觉素材使用不同许可。
 
-## 给你的 Dot 换上深深的外观
+## 给你的 Dot 换上Dew的外观
 
-![深深显示在带 dot 入口的桌面悬浮界面中](previews/dot-desktop.png)
+![Dew显示在带 dot 入口的桌面悬浮界面中](previews/dot-desktop.png)
 
-深深的现有 v2 Pet 包已能显示在带 `dot` 入口的新版桌面悬浮界面中。在已支持外观互通的账号中，Codex Pet 与 Dot 的形象可以互相选择，网页端也能同步使用。沿用 v0.5.0 角色包即可，无需额外修改代码、重做动画或运行 Windows 独立桌宠。
+Dew的现有 v2 Pet 包已能显示在带 `dot` 入口的新版桌面悬浮界面中。在已支持外观互通的账号中，Codex Pet 与 Dot 的形象可以互相选择，网页端也能同步使用。沿用 v0.5.0 角色包即可，无需额外修改代码、重做动画或运行 Windows 独立桌宠。
 
-想体验同样的外观？下载 [`Shenshen-Codex-Pet.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-Codex-Pet.zip)，按[桌面端安装步骤](#desktop-pet-install)安装，在 **设置 > Pets（宠物）** 中刷新、选择“深深”，再显示宠物。已经安装过的用户可直接刷新并重新选择。
+想体验同样的外观？下载 [`Shenshen-Codex-Pet.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-Codex-Pet.zip)，按[桌面端安装步骤](#desktop-pet-install)安装，在 **设置 > Pets（宠物）** 中刷新、选择“Dew”，再显示宠物。已经安装过的用户可直接刷新并重新选择。
 
 Dot 的任务处理、语音、插件和云端工作能力由 OpenAI 提供；本项目提供角色外观与动画。OpenAI 的 [Dot 介绍](https://learn.chatgpt.com/docs/dots)和 [2026 年 10 月更新](https://learn.chatgpt.com/docs/whats-new/dots-october-9-2026)介绍了 Dot 与 Codex 的协作；[Pets 文档](https://learn.chatgpt.com/docs/pets)说明了自定义宠物、快捷对话和活动提示的用法。上述外观互通与网页同步以当前界面表现为依据；官方 Pets 文档仍将桌面自定义 Pet 描述为本地保存，因此请以各账号实际提供的选择列表为准。
 
-喜欢深深，可以点一个 Star 收藏项目；遇到显示或动画问题，欢迎在 [Issues](https://github.com/schrieeeffer/shenshen-codex-pet/issues) 中附上客户端版本、复现步骤和不含隐私的截图。
+喜欢Dew，可以点一个 Star 收藏项目；遇到显示或动画问题，欢迎在 [Issues](https://github.com/schrieeeffer/shenshen-codex-pet/issues) 中附上客户端版本、复现步骤和不含隐私的截图。
 
 ## 动画预览
 
@@ -34,7 +34,7 @@ Dot 的任务处理、语音、插件和云端工作能力由 OpenAI 提供；�
 | Windows 独立桌面（推荐） | [`ShenshenPet-Windows-x64.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/ShenshenPet-Windows-x64.zip) | 自包含绿色版，完整解压即可用 |
 | Windows 独立桌面（小体积） | [`ShenshenPet-Windows-x64-runtime-shared.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/ShenshenPet-Windows-x64-runtime-shared.zip) | 复用系统 .NET 10 Desktop Runtime，减少下载和磁盘体积；常驻内存与自包含版接近 |
 | ChatGPT/Codex 桌面端与 Codex CLI | [`Shenshen-Codex-Pet.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-Codex-Pet.zip) | 根据 Running、Needs input、Ready、Blocked 等任务状态切换动画 |
-| ChatGPT Web（手动上传备用） | [`Shenshen-ChatGPT-Web-Pet.webp`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-ChatGPT-Web-Pet.webp) | 网页外观列表尚未出现深深时，可在支持上传的 Pets 设置中添加 |
+| ChatGPT Web（手动上传备用） | [`Shenshen-ChatGPT-Web-Pet.webp`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-ChatGPT-Web-Pet.webp) | 网页外观列表尚未出现Dew时，可在支持上传的 Pets 设置中添加 |
 | Windows 角色包 | [`Shenshen-Default-Pet-Pack.zip`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/Shenshen-Default-Pet-Pack.zip) | 测试“导入 Pet Pack”，或作为自制角色包模板 |
 
 下载后可用 [`SHA256SUMS.txt`](https://github.com/schrieeeffer/shenshen-codex-pet/releases/latest/download/SHA256SUMS.txt)核对文件完整性。完整变更见 [`CHANGELOG.md`](CHANGELOG.md)。
@@ -49,13 +49,13 @@ Dot 的任务处理、语音、插件和云端工作能力由 OpenAI 提供；�
 
 两个版本都不需要 .NET SDK。关闭透明窗口只会隐藏到系统托盘；要完全结束，请在右键菜单或托盘菜单中选择“退出”。`v0.5.0` 默认开启节能模式，并将隐藏/暂停时的渲染计时器完全停止。
 
-右键菜单还可以每天领取白饭、喂食提升羁绊，以及导入符合 [`PET_PACK_SPEC.md`](PET_PACK_SPEC.md) 的非商用角色包。成长进度离线保存在应用设置中；同一角色包 `id` 再次导入会安全更新，可随时恢复内置深深。
+右键菜单还可以每天领取白饭、喂食提升羁绊，以及导入符合 [`PET_PACK_SPEC.md`](PET_PACK_SPEC.md) 的非商用角色包。成长进度离线保存在应用设置中；同一角色包 `id` 再次导入会安全更新，可随时恢复内置Dew。
 
 <a id="desktop-pet-install"></a>
 
 ### 2. ChatGPT/Codex 桌面端与兼容的 Dot/Pets 界面
 
-**图形界面安装（推荐）**：如果已经在运行 Windows 独立版，右键点击深深，选择“安装到 Codex”，等待安装完成提示。随后在 ChatGPT/Codex 桌面端打开 **设置 > Pets（宠物）**，刷新并选择“深深”。安装后可退出 Windows 独立版，仅使用客户端内的 Pet。
+**图形界面安装（推荐）**：如果已经在运行 Windows 独立版，右键点击Dew，选择“安装到 Codex”，等待安装完成提示。随后在 ChatGPT/Codex 桌面端打开 **设置 > Pets（宠物）**，刷新并选择“Dew”。安装后可退出 Windows 独立版，仅使用客户端内的 Pet。
 
 也可以下载并解压 `Shenshen-Codex-Pet.zip`，在该目录运行：
 
@@ -63,7 +63,7 @@ Dot 的任务处理、语音、插件和云端工作能力由 OpenAI 提供；�
 powershell -ExecutionPolicy Bypass -File .\install-codex-pet.ps1
 ```
 
-安装完成后，在 ChatGPT/Codex 桌面端打开 **设置 > Pets**，选择 **Refresh** 和“深深”，点击 **显示宠物 / 唤醒虚拟宠物**，或输入 `/pet`。新版悬浮控件可提供快捷文字对话、语音和任务活动入口；在 Windows 上，默认快捷键 `Windows+Alt+P` 可显示控件并聚焦快捷对话，具体以客户端设置为准。默认安装位置是：
+安装完成后，在 ChatGPT/Codex 桌面端打开 **设置 > Pets**，选择 **Refresh** 和“Dew”，点击 **显示宠物 / 唤醒虚拟宠物**，或输入 `/pet`。新版悬浮控件可提供快捷文字对话、语音和任务活动入口；在 Windows 上，默认快捷键 `Windows+Alt+P` 可显示控件并聚焦快捷对话，具体以客户端设置为准。默认安装位置是：
 
 ```text
 %USERPROFILE%\.codex\pets\shenshen\
@@ -71,7 +71,7 @@ powershell -ExecutionPolicy Bypass -File .\install-codex-pet.ps1
 └─ spritesheet.webp
 ```
 
-如果设置了 `CODEX_HOME`，安装器会使用该目录。在已支持 Codex Pet / Dot 外观互通与网页同步的账号中，可直接从对应界面的形象列表选择深深；若网页端列表尚未出现，请按下面的 ChatGPT Web 步骤手动上传。
+如果设置了 `CODEX_HOME`，安装器会使用该目录。在已支持 Codex Pet / Dot 外观互通与网页同步的账号中，可直接从对应界面的形象列表选择Dew；若网页端列表尚未出现，请按下面的 ChatGPT Web 步骤手动上传。
 
 ### 3. Codex CLI
 
@@ -87,7 +87,7 @@ CLI Pet 需要 iTerm2 3.6+，或支持 Kitty graphics / Sixel 的终端；在 tm
 
 ### 4. ChatGPT Web
 
-先查看网页端的 Dot / Pet 形象列表。已同步出现“深深”时，直接选择即可，无需重复上传。尚未出现且界面提供上传入口时：
+先查看网页端的 Dot / Pet 形象列表。已同步出现“Dew”时，直接选择即可，无需重复上传。尚未出现且界面提供上传入口时：
 
 1. 下载 `Shenshen-ChatGPT-Web-Pet.webp`；
 2. 打开 **Settings > Personalization > Pet > Select pet**；
@@ -97,16 +97,16 @@ Web Pets 是否可用取决于账号和工作区。Web 版只显示在支持的 
 
 官方行为和兼容条件以 [OpenAI Pets 文档](https://learn.chatgpt.com/docs/pets)为准。
 
-### 5. 让 Windows 深深响应 Codex 任务（可选）
+### 5. 让 Windows Dew响应 Codex 任务（可选）
 
-在 Windows 深深的右键菜单中选择“安装 Codex 状态桥接”，然后在 Codex CLI 输入 `/hooks`，检查并信任新增 Hook。之后独立桌宠会响应：
+在 Windows Dew的右键菜单中选择“安装 Codex 状态桥接”，然后在 Codex CLI 输入 `/hooks`，检查并信任新增 Hook。之后独立桌宠会响应：
 
 - 提交新任务：`running`；
 - Codex 等待授权：`waiting`；
 - 本轮完成：`review`；
 - 会话结束：`idle`。
 
-该功能基于 [OpenAI Codex Hooks](https://learn.chatgpt.com/docs/hooks)，默认异步运行，只同步预定义动画状态。安装前会备份 Hook 配置，卸载只删除带深深标记的处理器。
+该功能基于 [OpenAI Codex Hooks](https://learn.chatgpt.com/docs/hooks)，默认异步运行，只同步预定义动画状态。安装前会备份 Hook 配置，卸载只删除带Dew标记的处理器。
 
 ## 安全与资源占用
 
@@ -211,4 +211,4 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build-release.ps1
 
 ## English summary
 
-Shenshen Pet is an unofficial, non-commercial companion for Windows, ChatGPT/Codex desktop, Codex CLI, and ChatGPT Web. The existing v2 pack works as an appearance in compatible Dot/Pets interfaces. On accounts with shared appearances enabled, Codex Pet and Dot appearances can be selected across interfaces, including the web. This describes observed behavior, not a universal sync guarantee; use the web upload asset if the appearance is absent. No code change or additional Windows pet process is needed for that appearance. Dot capabilities are provided by OpenAI and depend on account and client availability. The Windows build is portable and offline. Code is MIT-licensed; visual assets are CC BY-NC-SA 4.0 where licensable, subject to upstream rights and the maintainer's non-commercial permission.
+Dew is an unofficial, non-commercial companion for Windows, ChatGPT/Codex desktop, Codex CLI, and ChatGPT Web. The existing v2 pack works as an appearance in compatible Dot/Pets interfaces. On accounts with shared appearances enabled, Codex Pet and Dot appearances can be selected across interfaces, including the web. This describes observed behavior, not a universal sync guarantee; use the web upload asset if the appearance is absent. No code change or additional Windows pet process is needed for that appearance. Dot capabilities are provided by OpenAI and depend on account and client availability. The Windows build is portable and offline. Code is MIT-licensed; visual assets are CC BY-NC-SA 4.0 where licensable, subject to upstream rights and the maintainer's non-commercial permission.

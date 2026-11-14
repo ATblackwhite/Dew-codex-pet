@@ -42,8 +42,8 @@ public partial class App : System.Windows.Application
             {
                 var target = CodexPetInstaller.Install(Path.Combine(AppContext.BaseDirectory, "codex"));
                 MessageBox.Show(
-                    $"已安装深深 Codex 桌宠：\n{target}\n\n请在设置 > Pets 中刷新并启用，然后输入 /pet 唤醒。",
-                    "深深桌宠",
+                    $"已安装Dew Codex 桌宠：\n{target}\n\n请在设置 > Pets 中刷新并启用，然后输入 /pet 唤醒。",
+                    "Dew桌宠",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
@@ -62,7 +62,7 @@ public partial class App : System.Windows.Application
         _ownsSingleInstanceMutex = createdNew;
         if (!createdNew)
         {
-            MessageBox.Show("深深桌宠已经在运行。", "深深桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Dew桌宠已经在运行。", "Dew桌宠", MessageBoxButton.OK, MessageBoxImage.Information);
             Shutdown();
             return;
         }
@@ -108,7 +108,7 @@ public partial class App : System.Windows.Application
         var logHint = logPath is null ? string.Empty : $"\n\n诊断日志：{logPath}";
         MessageBox.Show(
             $"桌宠启动或运行时遇到错误：\n{exception.Message}\n\n请确认已完整解压发布包后再运行。{logHint}",
-            "深深桌宠运行失败",
+            "Dew桌宠运行失败",
             MessageBoxButton.OK,
             MessageBoxImage.Error);
     }

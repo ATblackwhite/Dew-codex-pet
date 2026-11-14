@@ -57,7 +57,7 @@ internal sealed class NativeTrayIcon : IDisposable
             ?? throw new InvalidOperationException("无法连接桌宠窗口消息循环。");
         _source.AddHook(WndProc);
 
-        _data = CreateData(handle, "深深桌宠");
+        _data = CreateData(handle, "Dew桌宠");
         if (!ShellNotifyIcon(NimAdd, ref _data))
         {
             _source.RemoveHook(WndProc);
@@ -75,7 +75,7 @@ internal sealed class NativeTrayIcon : IDisposable
             return;
         }
 
-        _data.Tooltip = string.IsNullOrWhiteSpace(tooltip) ? "深深桌宠" : tooltip[..Math.Min(tooltip.Length, 127)];
+        _data.Tooltip = string.IsNullOrWhiteSpace(tooltip) ? "Dew桌宠" : tooltip[..Math.Min(tooltip.Length, 127)];
         _data.Flags = NifMessage | NifIcon | NifTip;
         _ = ShellNotifyIcon(NimModify, ref _data);
     }
@@ -124,7 +124,7 @@ internal sealed class NativeTrayIcon : IDisposable
 
         try
         {
-            _ = AppendMenu(menu, MfString, CommandShow, "显示深深");
+            _ = AppendMenu(menu, MfString, CommandShow, "显示Dew");
             _ = AppendMenu(menu, MfString, CommandInstallCodex, "安装到 Codex");
             _ = AppendMenu(menu, MfSeparator, 0, null);
             _ = AppendMenu(menu, MfString, CommandExit, "退出");
