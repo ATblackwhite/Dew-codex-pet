@@ -89,7 +89,7 @@ public partial class MainWindow : Window
 
     private static string BuiltInManifestPath => Path.Combine(AppContext.BaseDirectory, "pet", "pet.manifest.json");
 
-    private static string BuiltInAtlasPath => Path.Combine(AppContext.BaseDirectory, "assets", "spritesheet-v2.png");
+    private static string BuiltInAtlasPath => Path.Combine(AppContext.BaseDirectory, "assets", "lucky-braid.png");
 
     private static string BuiltInFramesDirectory => Path.Combine(AppContext.BaseDirectory, "assets", "frames");
 

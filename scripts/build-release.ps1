@@ -54,7 +54,7 @@ function Copy-ApplicationPayload {
     param([Parameter(Mandatory)] [string]$Stage)
 
     $payload = @{
-        'assets\spritesheet-v2.png' = 'assets\spritesheet-v2.png'
+        'assets\lucky-braid.png' = 'assets\lucky-braid.png'
         'pet\pet.manifest.json' = 'pet\pet.manifest.json'
         'codex\pet.json' = 'pet\codex\pet.json'
         'codex\spritesheet.webp' = 'pet\codex\spritesheet.webp'
@@ -271,7 +271,7 @@ Assert-NoPrivateBuildPaths -Stage $runtimeSharedStage -PrivatePaths $privateBuil
 
 $commonRequiredFiles = @(
     'ShenshenPet.exe',
-    'assets\spritesheet-v2.png',
+    'assets\lucky-braid.png',
     'assets\frames\0-0.png',
     'assets\frames\10-7.png',
     'pet\pet.manifest.json',
@@ -346,7 +346,7 @@ Remove-ExistingChild -Path $installerTestHome -Root $stagingRoot
 
 Copy-Item -LiteralPath (Join-Path $repoRoot 'pet\pet.manifest.json') -Destination $petPackStage
 New-Item -ItemType Directory -Force -Path (Join-Path $petPackStage 'assets') | Out-Null
-Copy-Item -LiteralPath (Join-Path $repoRoot 'assets\spritesheet-v2.png') -Destination (Join-Path $petPackStage 'assets')
+Copy-Item -LiteralPath (Join-Path $repoRoot 'assets\lucky-braid.png') -Destination (Join-Path $petPackStage 'assets')
 foreach ($fileName in @('ASSET_LICENSE.md', 'LEGAL_NOTICE.md', 'AI_PROVENANCE.md', 'PET_PACK_SPEC.md')) {
     Copy-Item -LiteralPath (Join-Path $repoRoot $fileName) -Destination $petPackStage
 }
@@ -367,7 +367,7 @@ if ((Get-Item -LiteralPath $webAsset).Length -gt 20MB) {
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 Assert-ZipEntries -ZipPath $portableZip -RelativePaths $commonRequiredFiles
 Assert-ZipEntries -ZipPath $runtimeSharedZip -RelativePaths $runtimeSharedRequiredFiles
-Assert-ZipEntries -ZipPath $petPackZip -RelativePaths @('pet.manifest.json', 'assets\spritesheet-v2.png', 'PET_PACK_SPEC.md')
+Assert-ZipEntries -ZipPath $petPackZip -RelativePaths @('pet.manifest.json', 'assets\lucky-braid.png', 'PET_PACK_SPEC.md')
 
 $releaseAssets = @($portableZip, $runtimeSharedZip, $codexZip, $petPackZip, $webAsset)
 $checksumLines = foreach ($asset in $releaseAssets) {

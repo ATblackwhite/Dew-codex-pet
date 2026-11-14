@@ -9,7 +9,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ATLAS_PATH = ROOT / "assets" / "spritesheet-v2.png"
+ATLAS_PATH = ROOT / "assets" / "lucky-braid.png"
 MANIFEST_PATH = ROOT / "pet" / "pet.manifest.json"
 
 

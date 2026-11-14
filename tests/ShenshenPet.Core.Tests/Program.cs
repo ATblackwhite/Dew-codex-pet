@@ -3,7 +3,7 @@ using System.Text.Json;
 using ShenshenPet.Core;
 
 var manifestPath = Path.Combine(AppContext.BaseDirectory, "pet.manifest.json");
-var atlasPath = Path.Combine(AppContext.BaseDirectory, "assets", "spritesheet-v2.png");
+var atlasPath = Path.Combine(AppContext.BaseDirectory, "assets", "lucky-braid.png");
 var manifest = PetManifest.Load(manifestPath);
 
 Expect(manifest.Id == "shenshen", "manifest id");
@@ -166,7 +166,7 @@ static void CreatePack(string packagePath, string manifestJson, string atlasPath
         writer.Write(manifestJson);
     }
 
-    archive.CreateEntryFromFile(atlasPath, "assets/spritesheet-v2.png", CompressionLevel.Optimal);
+    archive.CreateEntryFromFile(atlasPath, "assets/lucky-braid.png", CompressionLevel.Optimal);
 }
 
 static void Expect(bool condition, string name)

@@ -26,14 +26,16 @@
 
 ## 覆盖范围
 
-除文件自身另有更具体声明外，本说明覆盖：
+本说明适用于原版深深视觉素材。当前工作区的 `assets/lucky-braid.png` 来自用户先前生成的 Lucky Braid 完整重绘版，对应的两个运行时 WebP 从该精灵表无损导出。Lucky Braid 的素材许可由其权利人决定。
 
-- `assets/`
+除文件自身另有更具体声明外，原版深深素材包括：
+
+- `assets/spritesheet-v2.png`
 - `source/`
 - `previews/`
 - `references/` 中的视觉布局参考
 - `qa/` 中的图片与视频
-- `pet/codex/spritesheet.webp`
-- `pet/web/spritesheet.webp`
+- 原版发布包中的 `pet/codex/spritesheet.webp`
+- 原版发布包中的 `pet/web/spritesheet.webp`
 
 MIT `LICENSE` 只覆盖软件代码与仓库配置，不覆盖上述视觉素材。DeepSeek、OpenAI、ChatGPT 及其他第三方名称与标志不在本许可授予范围内。

@@ -10,7 +10,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ATLAS = ROOT / "assets" / "spritesheet-v2.png"
+ATLAS = ROOT / "assets" / "lucky-braid.png"
 MANIFEST = ROOT / "pet" / "pet.manifest.json"
 CODEX_MANIFEST = ROOT / "pet" / "codex" / "pet.json"
 CODEX_ATLAS = ROOT / "pet" / "codex" / "spritesheet.webp"
@@ -19,7 +19,6 @@ EXPECTED_SIZE = (1536, 2288)
 EXPECTED_WEB_SIZE = (1536, 1872)
 CELL_SIZE = (192, 208)
 FRAMES_PER_ROW = (6, 8, 8, 4, 5, 8, 6, 6, 6, 8, 8)
-EXPECTED_SHA256 = "0dd1c39f8333f73da19389b4cda3f62c5658468e93caa5401add19bca33b5f30"
 EXPECTED_STATES = (
     "idle",
     "running-right",
@@ -67,10 +66,11 @@ def validate_occupancy(
     return errors
 
 
-def validate_manifest() -> list[str]:
+def validate_manifest(manifest: dict) -> list[str]:
     errors: list[str] = []
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     atlas = manifest.get("atlas", {})
+    if atlas.get("path") != ATLAS.relative_to(ROOT).as_posix():
+        errors.append("pet manifest atlas path differs from the packaged source PNG")
     if (atlas.get("width"), atlas.get("height")) != EXPECTED_SIZE:
         errors.append("pet manifest atlas dimensions do not match the v2 contract")
     if (atlas.get("cellWidth"), atlas.get("cellHeight")) != CELL_SIZE:
@@ -108,6 +108,8 @@ def validate_manifest() -> list[str]:
 def main() -> int:
     args = parse_args()
     errors: list[str] = []
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    expected_sha256 = manifest.get("atlas", {}).get("sha256")
     data = ATLAS.read_bytes()
     digest = hashlib.sha256(data).hexdigest()
 
@@ -123,7 +125,7 @@ def main() -> int:
         errors.append(f"wrong atlas size: {image.size}, expected {EXPECTED_SIZE}")
 
     errors.extend(validate_occupancy(image, "source PNG"))
-    errors.extend(validate_manifest())
+    errors.extend(validate_manifest(manifest))
 
     if CODEX_ATLAS.exists():
         with Image.open(CODEX_ATLAS) as opened:
@@ -162,11 +164,11 @@ def main() -> int:
     print(f"file: {ATLAS}")
     print(f"size: {image.width}x{image.height}")
     print(f"sha256: {digest}")
-    print(f"expected sha256: {EXPECTED_SHA256}")
+    print(f"expected sha256: {expected_sha256}")
 
-    if digest != EXPECTED_SHA256 and not args.allow_reencoded:
-        errors.append("source PNG SHA-256 differs from the immutable packaged release")
-    elif digest != EXPECTED_SHA256:
+    if digest != expected_sha256 and not args.allow_reencoded:
+        errors.append("source PNG SHA-256 differs from the shared manifest")
+    elif digest != expected_sha256:
         print("note: source bytes differ; accepted because --allow-reencoded was supplied")
 
     if errors:

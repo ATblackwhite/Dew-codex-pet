@@ -2,9 +2,7 @@
 
 ## 当前成果
 
-本目录包含完整角色动画资产、Windows WPF 独立桌宠和 Codex v2 安装包。最终源 atlas 是：
-
-`assets/spritesheet-v2.png`
+本目录包含完整角色动画资产、Windows WPF 独立桌宠和 Codex v2 安装包。当前运行时使用 Lucky Braid 精灵表 `assets/lucky-braid.png`。原版深深的精灵表位于 `assets/spritesheet-v2.png`。
 
 Windows 入口位于 `src/ShenshenPet.Windows/`，共享动画状态机、成长、Pet Pack 与 Hook 安装逻辑位于 `src/ShenshenPet.Core/`，轻量 Hook 状态助手位于 `src/ShenshenPet.Bridge/`。桌面/CLI Codex 包位于 `pet/codex/`，ChatGPT Web 上传版位于 `pet/web/`。所有运行时语义以 `pet/pet.manifest.json` 为准。
 

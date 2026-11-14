@@ -7,7 +7,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "assets" / "spritesheet-v2.png"
+SOURCE = ROOT / "assets" / "lucky-braid.png"
 DEFAULT_OUTPUT = ROOT / "pet" / "codex" / "spritesheet.webp"
 DEFAULT_WEB_OUTPUT = ROOT / "pet" / "web" / "spritesheet.webp"
 EXPECTED_SIZE = (1536, 2288)

@@ -23,6 +23,8 @@ Dot 的任务处理、语音、插件和云端工作能力由 OpenAI 提供；�
 
 ## 动画预览
 
+从本工作区构建的 Windows、Codex 桌面/CLI 和 ChatGPT Web 版本使用 Lucky Braid 的动画。下面的预览和发布下载仍对应原版Dew。
+
 ![全部状态](previews/all-states.gif)
 
 ![观察方向](previews/look-loop.gif)
@@ -184,7 +186,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build-release.ps1
 | `src/ShenshenPet.Bridge/` | 轻量 Codex Hook 状态助手 |
 | `pet/codex/` | ChatGPT/Codex 桌面与 CLI 的完整 v2 Pet |
 | `pet/web/` | ChatGPT Web 的 8×9 上传图 |
-| `assets/spritesheet-v2.png` | 独立版使用的最终 PNG atlas |
+| `assets/lucky-braid.png` | 当前构建使用的 Lucky Braid 精灵表 |
+| `assets/spritesheet-v2.png` | 原版Dew的精灵表 |
 | `source/` | 原始生成素材与提示词记录，不由构建覆盖 |
 | `previews/` | 状态和方向预览 |
 | `scripts/` | 构建、安装、打包和严格素材验证 |

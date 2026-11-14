@@ -5,8 +5,8 @@
   "description": "一只会陪你写代码的蓝发鲸鱼少女桌宠。",
   "unofficial": true,
   "atlas": {
-    "path": "assets/spritesheet-v2.png",
-    "sha256": "0dd1c39f8333f73da19389b4cda3f62c5658468e93caa5401add19bca33b5f30",
+    "path": "assets/lucky-braid.png",
+    "sha256": "b07aa8e546bbcb780303e5e69ab60f390392cbb37e8261208c9d309c5c80fe4c",
     "width": 1536,
     "height": 2288,
     "columns": 8,

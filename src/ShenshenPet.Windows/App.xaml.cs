@@ -132,7 +132,7 @@ public partial class App : System.Windows.Application
     private static void RunSelfTest()
     {
         var manifestPath = Path.Combine(AppContext.BaseDirectory, "pet", "pet.manifest.json");
-        var atlasPath = Path.Combine(AppContext.BaseDirectory, "assets", "spritesheet-v2.png");
+        var atlasPath = Path.Combine(AppContext.BaseDirectory, "assets", "lucky-braid.png");
         var codexManifestPath = Path.Combine(AppContext.BaseDirectory, "codex", "pet.json");
         var codexAtlasPath = Path.Combine(AppContext.BaseDirectory, "codex", "spritesheet.webp");
         var manifest = PetManifest.Load(manifestPath);
