@@ -7,7 +7,7 @@ $ErrorActionPreference = 'Stop'
 
 function Resolve-PackageDirectory {
     $sourcePackage = Join-Path (Split-Path -Parent $PSScriptRoot) 'pet\codex'
-    $releasePackage = Join-Path $PSScriptRoot 'shenshen'
+    $releasePackage = Join-Path $PSScriptRoot 'dew'
 
     if (Test-Path -LiteralPath (Join-Path $sourcePackage 'pet.json')) {
         return (Resolve-Path -LiteralPath $sourcePackage).Path
@@ -32,11 +32,11 @@ if ([string]::IsNullOrWhiteSpace($CodexHome)) {
 $packageDirectory = Resolve-PackageDirectory
 $codexRoot = [IO.Path]::GetFullPath($CodexHome)
 $petsRoot = Join-Path $codexRoot 'pets'
-$targetDirectory = Join-Path $petsRoot 'shenshen'
+$targetDirectory = Join-Path $petsRoot 'dew'
 
 New-Item -ItemType Directory -Force -Path $targetDirectory | Out-Null
 Copy-Item -LiteralPath (Join-Path $packageDirectory 'pet.json') -Destination $targetDirectory -Force
 Copy-Item -LiteralPath (Join-Path $packageDirectory 'spritesheet.webp') -Destination $targetDirectory -Force
 
-Write-Host "Installed Shenshen Codex pet: $targetDirectory"
-Write-Host 'In ChatGPT/Codex desktop, open Settings > Pets, select Refresh, choose Shenshen, then enter /pet.'
+Write-Host "Installed Dew Codex pet: $targetDirectory"
+Write-Host 'In ChatGPT/Codex desktop, open Settings > Pets, select Refresh, choose Dew, then enter /pet.'

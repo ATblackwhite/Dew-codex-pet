@@ -319,7 +319,7 @@ if ($runtimeSharedSelfTest.ExitCode -ne 0) {
     throw "runtime-shared release self-test failed with exit code $($runtimeSharedSelfTest.ExitCode)"
 }
 
-$codexPetStage = Join-Path $codexStage 'shenshen'
+$codexPetStage = Join-Path $codexStage 'dew'
 New-Item -ItemType Directory -Force -Path $codexPetStage | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot 'pet\codex\pet.json') -Destination $codexPetStage
 Copy-Item -LiteralPath (Join-Path $repoRoot 'pet\codex\spritesheet.webp') -Destination $codexPetStage
@@ -337,7 +337,7 @@ if ($LASTEXITCODE -ne 0) {
     throw "Codex installer smoke test failed with exit code $LASTEXITCODE"
 }
 foreach ($fileName in @('pet.json', 'spritesheet.webp')) {
-    $installedFile = Join-Path $installerTestHome "pets\shenshen\$fileName"
+    $installedFile = Join-Path $installerTestHome "pets\dew\$fileName"
     if (-not (Test-Path -LiteralPath $installedFile -PathType Leaf)) {
         throw "Codex installer smoke test is missing $fileName"
     }

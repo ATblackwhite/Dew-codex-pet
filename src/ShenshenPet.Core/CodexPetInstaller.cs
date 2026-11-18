@@ -30,7 +30,7 @@ public static class CodexPetInstaller
 
         var root = Path.GetFullPath(codexHome ?? ResolveCodexHome());
         var petsRoot = Path.Combine(root, "pets");
-        var target = Path.Combine(petsRoot, "shenshen");
+        var target = Path.Combine(petsRoot, "dew");
         Directory.CreateDirectory(target);
 
         foreach (var file in RequiredFiles)

@@ -6,7 +6,7 @@ var manifestPath = Path.Combine(AppContext.BaseDirectory, "pet.manifest.json");
 var atlasPath = Path.Combine(AppContext.BaseDirectory, "assets", "lucky-braid.png");
 var manifest = PetManifest.Load(manifestPath);
 
-Expect(manifest.Id == "shenshen", "manifest id");
+Expect(manifest.Id == "dew", "manifest id");
 Expect(manifest.ResolveAnimation("active-work").Id == "running", "active-work compatibility alias");
 Expect(manifest.LookDirections.Count == 16, "look direction count");
 
@@ -76,9 +76,19 @@ static void TestDataHomeOverride(string testRoot)
 static void TestCodexPetInstall(string testRoot)
 {
     var package = Path.Combine(AppContext.BaseDirectory, "codex");
-    var installed = CodexPetInstaller.Install(package, Path.Combine(testRoot, "codex-pet-home"));
-    Expect(File.Exists(Path.Combine(installed, "pet.json")), "Codex pet manifest install");
-    Expect(File.Exists(Path.Combine(installed, "spritesheet.webp")), "Codex spritesheet install");
+    var codexHome = Path.Combine(testRoot, "codex-pet-home");
+    var original = Path.Combine(codexHome, "pets", "shenshen");
+    Directory.CreateDirectory(original);
+    File.WriteAllText(Path.Combine(original, "pet.json"), """{"id":"shenshen"}""");
+    File.WriteAllText(Path.Combine(original, "spritesheet.webp"), "original sprite");
+
+    var installed = CodexPetInstaller.Install(package, codexHome);
+    Expect(installed == Path.Combine(codexHome, "pets", "dew"), "Dew installs in its own directory");
+    using var manifest = JsonDocument.Parse(File.ReadAllText(Path.Combine(installed, "pet.json")));
+    Expect(manifest.RootElement.GetProperty("id").GetString() == "dew", "installed Dew manifest id");
+    Expect(File.Exists(Path.Combine(installed, "spritesheet.webp")), "Dew spritesheet install");
+    Expect(File.ReadAllText(Path.Combine(original, "pet.json")) == """{"id":"shenshen"}""", "original manifest preserved");
+    Expect(File.ReadAllText(Path.Combine(original, "spritesheet.webp")) == "original sprite", "original spritesheet preserved");
 }
 
 static void TestPetPackImport(
@@ -91,9 +101,9 @@ static void TestPetPackImport(
     CreatePack(packagePath, File.ReadAllText(manifestPath), atlasPath);
     var packsRoot = Path.Combine(testRoot, "packs");
     var imported = PetPackImporter.Import(packagePath, packsRoot);
-    Expect(imported.Id == "shenshen", "Pet Pack id");
+    Expect(imported.Id == "dew", "Pet Pack id");
     Expect(File.Exists(imported.ManifestPath) && File.Exists(imported.AtlasPath), "Pet Pack extracted files");
-    Expect(PetPackImporter.TryResolve("shenshen", packsRoot)?.AtlasPath == imported.AtlasPath, "Pet Pack resolve");
+    Expect(PetPackImporter.TryResolve("dew", packsRoot)?.AtlasPath == imported.AtlasPath, "Pet Pack resolve");
     Expect(PetManifest.Load(imported.ManifestPath).Atlas.Sha256 == atlasHash, "Pet Pack manifest preserved");
 }
 

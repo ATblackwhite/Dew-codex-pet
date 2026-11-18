@@ -1,10 +1,10 @@
-# Codex 技术交接：深深双模式桌宠
+# Codex 技术交接：Dew 双模式桌宠
 
 ## 当前成果
 
 本目录包含完整角色动画资产、Windows WPF 独立桌宠和 Codex v2 安装包。当前运行时使用 Lucky Braid 精灵表 `assets/lucky-braid.png`。原版深深的精灵表位于 `assets/spritesheet-v2.png`。
 
-Windows 入口位于 `src/ShenshenPet.Windows/`，共享动画状态机、成长、Pet Pack 与 Hook 安装逻辑位于 `src/ShenshenPet.Core/`，轻量 Hook 状态助手位于 `src/ShenshenPet.Bridge/`。桌面/CLI Codex 包位于 `pet/codex/`，ChatGPT Web 上传版位于 `pet/web/`。所有运行时语义以 `pet/pet.manifest.json` 为准。
+Windows 入口位于 `src/ShenshenPet.Windows/`，共享动画状态机、成长、Pet Pack 与 Hook 安装逻辑位于 `src/ShenshenPet.Core/`，轻量 Hook 状态助手位于 `src/ShenshenPet.Bridge/`。桌面/CLI Codex 包位于 `pet/codex/`，安装标识为 `dew`，可以和原版 `shenshen` 共存，ChatGPT Web 上传版位于 `pet/web/`。所有运行时语义以 `pet/pet.manifest.json` 为准。
 
 v0.5.0 默认开启 10 FPS 节能模式，隐藏/暂停时停止渲染计时器，并使用原生 Win32 托盘。发布包按需加载独立帧且最多缓存 12 张。可选 Codex Hooks 只把规范状态写入 `%LOCALAPPDATA%\ShenshenPet\codex-state.json`；导入角色包必须遵循 `PET_PACK_SPEC.md` 的路径、体积、几何和 SHA-256 安全检查。
 

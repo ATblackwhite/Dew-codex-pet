@@ -18,7 +18,7 @@
 
 - Keep animation-state mapping data-driven; do not scatter frame coordinates through the renderer.
 - Map application events to the semantic states documented in `CODEX_HANDOFF.md`.
-- Keep the character name `深深` and an ASCII identifier such as `shenshen`.
+- Use `Dew` as the display name and `dew` as its ID. The original Shenshen Codex pet uses `shenshen`.
 - Rebuild desktop/CLI and web assets with `python scripts/build_codex_package.py`, then verify them with `python scripts/verify_sprite.py` after copying or re-encoding the atlas.
 - For application changes, run the Release build and `ShenshenPet.Core.Tests` console tests.
 

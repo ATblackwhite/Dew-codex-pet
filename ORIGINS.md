@@ -4,7 +4,7 @@
 
 ## 简要结论
 
-“深深”不是 DeepSeek 官方公布的角色，而是蓝发鲸鱼娘社区形象的衍生版本。本仓库当前精灵表不是从上游 WebM 直接重新封装：制作提示词参考了上游角色身份特征，再使用 OpenAI 图像工具生成/修改新帧，并经过人工选择、对齐、去背和打包。
+“深深”不是 DeepSeek 官方公布的角色，而是蓝发鲸鱼娘社区形象的衍生版本。原版深深的精灵表不是从上游 WebM 直接重新封装：制作提示词参考了上游角色身份特征，再使用 OpenAI 图像工具生成/修改新帧，并经过人工选择、对齐、去背和打包。
 
 ## 证据分级
 
@@ -25,11 +25,13 @@
 
 可直接确认的项目参考关系：
 
-`PC2005-cloud/dsh-pet → MerZlin/dsh-pet-indesktop → ianlike-ui/dsh-pet-standalone → shenshen-codex-pet`
+`PC2005-cloud/dsh-pet → MerZlin/dsh-pet-indesktop → ianlike-ui/dsh-pet-standalone → shenshen-codex-pet → Dew-codex-pet`
 
 两条线有视觉与社区背景上的关联，但不能在缺少一手证据时合并成一条精确的文件版权转移链。
 
-## 本项目作出的修改
+## 原版深深的制作与 Dew 的改动
+
+Dew 使用 Lucky Braid 重绘素材，显示名称为 Dew，安装 ID 为 `dew`。以下记录的是原版深深的制作过程。
 
 - 将角色名称设为“深深”，ASCII ID 为 `shenshen`；
 - 生成并筛选待机、移动、招手、跳跃、失败、等待、工作、审阅与 16 个观察方向；

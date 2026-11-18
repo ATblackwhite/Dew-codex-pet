@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "shenshen",
+  "id": "dew",
   "displayName": "Dew",
-  "description": "一只会陪你写代码的蓝发鲸鱼少女桌宠。",
+  "description": "一只会陪你写代码的桌宠。",
   "unofficial": true,
   "atlas": {
     "path": "assets/lucky-braid.png",

@@ -1,4 +1,4 @@
-# Shenshen Pet Pack v1
+# Dew Pet Pack v1
 
 Pet Pack 是 Windows 独立版可导入的非商用角色包。文件扩展名可以是 `.zip` 或 `.shenshenpet`，两者内容相同。
 
@@ -38,4 +38,4 @@ Windows 端在解压前后都会验证：
 
 ## 许可要求
 
-分发 Pet Pack 时，请同时提供素材来源、AI 制作说明（如适用）和真实许可条件。不要把 MIT 代码许可自动套用于美术。默认深深包受 `ASSET_LICENSE.md` 所列 CC BY-NC-SA 4.0 与上游非商业条款约束。
+分发 Pet Pack 时，请同时提供素材来源、AI 制作说明（如适用）和真实许可条件。不要把 MIT 代码许可自动套用于美术。原版深深包受 `ASSET_LICENSE.md` 所列 CC BY-NC-SA 4.0 与上游非商业条款约束。
